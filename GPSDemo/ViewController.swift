@@ -15,6 +15,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     var locationManager: CLLocationManager!
     
+    var location: CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,16 +43,20 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationLabel.text = "\(locations.last?.coordinate.latitude)__\(locations.last?.coordinate.longitude)"
+        self.locationLabel.text = "\(describing: locations.last?.coordinate.latitude)>>>>\(describing: locations.last?.coordinate.longitude)"
+        
+        location = locations.last
+        print("\(describing: locations.last?.coordinate.latitude)>>>>\(describing: locations.last?.coordinate.longitude)")
+        
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(locations.last!) { (placemarks, error) in
             if error != nil{
-                print("error:\(error?.localizedDescription)")
+                print("error:\(String(describing: error?.localizedDescription))")
             }else if placemarks != nil && placemarks!.count > 0 {
                 let plcaemark = placemarks![0]
                 let name = plcaemark.name
-                self.locationLabel.text = name
+                self.locationLabel.text?.append("\n"+name!)
             }
             
         
@@ -68,6 +74,15 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         print("error:\(error)")
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goup" {
+          let mapvc =  segue.destination as! MapVC
+            mapvc.latitude = (location?.coordinate.latitude)!
+            mapvc.longitude = (location?.coordinate.longitude)!
+        }
+    }
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status{
