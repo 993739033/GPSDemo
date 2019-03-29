@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69869F3F224DB6B300C408B6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69869F3E224DB69900C408B6 /* MapKit.framework */; };
+		69869F41224DB80600C408B6 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69869F40224DB80600C408B6 /* MapVC.swift */; };
+		69869F43224DC75C00C408B6 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69869F42224DC75C00C408B6 /* MyAnnotation.swift */; };
+		69869F45224DF6BA00C408B6 /* MapVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69869F44224DF6BA00C408B6 /* MapVC2.swift */; };
 		69F3F7EB224CBE5F000006B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3F7EA224CBE5F000006B9 /* AppDelegate.swift */; };
 		69F3F7ED224CBE5F000006B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3F7EC224CBE5F000006B9 /* ViewController.swift */; };
 		69F3F7F0224CBE5F000006B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F3F7EE224CBE5F000006B9 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69869F3E224DB69900C408B6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		69869F40224DB80600C408B6 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		69869F42224DC75C00C408B6 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		69869F44224DF6BA00C408B6 /* MapVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC2.swift; sourceTree = "<group>"; };
 		69F3F7E7224CBE5F000006B9 /* GPSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F3F7EA224CBE5F000006B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69F3F7EC224CBE5F000006B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69869F3F224DB6B300C408B6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69869F3D224DB69800C408B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69869F3E224DB69900C408B6 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69F3F7DE224CBE5E000006B9 = {
 			isa = PBXGroup;
 			children = (
 				69F3F7E9224CBE5F000006B9 /* GPSDemo */,
 				69F3F7E8224CBE5F000006B9 /* Products */,
+				69869F3D224DB69800C408B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +72,15 @@
 		69F3F7E9224CBE5F000006B9 /* GPSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				69869F40224DB80600C408B6 /* MapVC.swift */,
 				69F3F7EA224CBE5F000006B9 /* AppDelegate.swift */,
 				69F3F7EC224CBE5F000006B9 /* ViewController.swift */,
 				69F3F7EE224CBE5F000006B9 /* Main.storyboard */,
 				69F3F7F1224CBE5F000006B9 /* Assets.xcassets */,
 				69F3F7F3224CBE5F000006B9 /* LaunchScreen.storyboard */,
 				69F3F7F6224CBE5F000006B9 /* Info.plist */,
+				69869F42224DC75C00C408B6 /* MyAnnotation.swift */,
+				69869F44224DF6BA00C408B6 /* MapVC2.swift */,
 			);
 			path = GPSDemo;
 			sourceTree = "<group>";
@@ -142,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F3F7ED224CBE5F000006B9 /* ViewController.swift in Sources */,
+				69869F41224DB80600C408B6 /* MapVC.swift in Sources */,
+				69869F43224DC75C00C408B6 /* MyAnnotation.swift in Sources */,
 				69F3F7EB224CBE5F000006B9 /* AppDelegate.swift in Sources */,
+				69869F45224DF6BA00C408B6 /* MapVC2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3N6J2YLBJV;
 				INFOPLIST_FILE = GPSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Scode.GPSDemo;
@@ -294,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3N6J2YLBJV;
 				INFOPLIST_FILE = GPSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Scode.GPSDemo;
